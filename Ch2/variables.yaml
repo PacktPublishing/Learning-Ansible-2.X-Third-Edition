@@ -1,0 +1,10 @@
+--- 
+- hosts: all 
+  remote_user: vagrant
+  tasks: 
+    - name: Set variable 'name' 
+      set_fact: 
+        name: Test machine 
+    - name: Print variable 'name' 
+      debug: 
+        msg: '{{ name }}' 

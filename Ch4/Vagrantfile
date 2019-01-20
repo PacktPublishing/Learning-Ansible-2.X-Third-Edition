@@ -1,0 +1,19 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "ws01" do |ws01|
+    ws01.vm.hostname = "ws01.fale.io"
+    ws01.vm.box = "centos/7"
+  end
+  config.vm.define "ws02" do |ws02|
+    ws02.vm.hostname = "ws02.fale.io"
+    ws02.vm.box = "centos/7"
+  end
+  config.vm.define "ws03" do |ws03|
+    ws03.vm.hostname = "ws03.fale.io"
+    ws03.vm.box = "debian/stretch64"
+  end
+  config.vm.define "db01" do |db01|
+    db01.vm.hostname = "db01.fale.io"
+    db01.vm.box = "centos/7"
+  end
+end
+

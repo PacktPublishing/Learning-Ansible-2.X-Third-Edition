@@ -1,0 +1,39 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Ensure domain is present
+      digital_ocean_domain:
+        api_token: ee02bd715e4f72c19c4bf22de788dba04cb04506de40b88b7f65a3c6e972f11d
+        state: present
+        name: do.fale.io
+        ip: 127.0.0.1
+    - name: Add the SSH Key to Digital Ocean
+      digital_ocean:
+        state: present
+        command: ssh
+        name: faleKey
+        ssh_pub_key: "{{ lookup('file', '~/.ssh/fale.pub') }}"
+        api_token: ee02bd715e4f72c19c4bf22de788dba04cb04506de40b88b7f65a3c6e972f11d
+      register: ssh_key
+    - name: Ensure the ws and db servers are present
+      digital_ocean:
+        state: present
+        ssh_key_ids: '{{ ssh_key.ssh_key.id }}'
+        name: '{{ item }}'
+        api_token: ee02bd715e4f72c19c4bf22de788dba04cb04506de40b88b7f65a3c6e972f11d
+        size_id: 512mb
+        region_id: lon1
+        image_id: centos-7-x64
+        unique_name: True
+      with_items:
+        - ws01.do.fale.io
+        - ws02.do.fale.io
+        - db01.do.fale.io
+      register: droplets
+    - name: Ensure domain resolve properly
+      digital_ocean_domain:
+        api_token: ee02bd715e4f72c19c4bf22de788dba04cb04506de40b88b7f65a3c6e972f11d
+        state: present
+        name: '{{ item.droplet.name }}'
+        ip: '{{ item.droplet.ip_address }}'
+      with_items: '{{ droplets.results }}'

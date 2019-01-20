@@ -1,0 +1,24 @@
+--- 
+- hosts: all 
+  user: vagrant 
+  tasks: 
+    - name: Ensure ansible user exists 
+      user: 
+        name: ansible 
+        state: present 
+        comment: Ansible 
+      become: True
+    - name: Ensure ansible user accepts the SSH key 
+      authorized_key: 
+        user: ansible 
+        key: https://github.com/fale.keys 
+        state: present 
+      become: True
+    - name: Ensure the ansible user is sudoer with no password required 
+      lineinfile: 
+        dest: /etc/sudoers 
+        state: present 
+        regexp: '^ansible ALL\=' 
+        line: 'ansible ALL=(ALL) NOPASSWD:ALL' 
+        validate: 'visudo -cf %s'
+      become: True

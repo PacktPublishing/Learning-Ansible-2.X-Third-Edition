@@ -1,0 +1,7 @@
+
+--- 
+- hosts: webserver 
+  user: vagrant 
+  roles: 
+  - common 
+  - webserver

@@ -1,0 +1,5 @@
+--- 
+- hosts: database 
+  user: vagrant 
+  roles: 
+  - common 
