@@ -1,0 +1,13 @@
+- hosts: localhost 
+  tasks: 
+    - name: Read the machine uptime 
+      command: uptime -p 
+      register: uptime 
+    - name: Send the uptime via e-mail 
+      mail: 
+        host: mail.fale.io 
+        username: ansible@fale.io 
+        password: PASSWORD 
+        to: me@fale.io 
+        subject: Ansible-report 
+        body: 'Local system uptime is {{ uptime.stdout }}.' 

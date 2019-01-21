@@ -1,0 +1,25 @@
+- hosts: ws01.fale.io 
+  tasks: 
+    - name: Silence Nagios 
+      nagios: 
+        action: disable_alerts 
+        service: httpd 
+        host: '{{ inventory_hostname }}' 
+      delegate_to: nagios.fale.io 
+    - name: Stop the HTTPd service 
+      service: 
+        name: httpd 
+        state: stopped 
+    - name: Wait for 5 minutes 
+      pause: 
+        minutes: 5 
+    - name: Start the HTTPd service 
+      service: 
+        name: httpd 
+        state: stopped 
+    - name: Desilence Nagios 
+      nagios: 
+        action: enable_alerts 
+        service: httpd 
+        host: '{{ inventory_hostname }}' 
+      delegate_to: nagios.fale.io 

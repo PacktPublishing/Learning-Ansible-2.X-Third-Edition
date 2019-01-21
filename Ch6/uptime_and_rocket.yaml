@@ -1,0 +1,11 @@
+- hosts: localhost 
+  tasks: 
+    - name: Read the machine uptime 
+      command: 'uptime -p' 
+      register: uptime 
+    - name: Send the uptime to rocketchat channel 
+      rocketchat: 
+        token: TOKEN 
+        domain: chat.example.com 
+        channel: '#ansible' 
+        msg: 'Local system uptime is {{ uptime.stdout }}.' 

@@ -1,0 +1,13 @@
+- hosts: ws01.fale.io 
+  tasks: 
+    - name: Stop the HTTPd service 
+      service: 
+        name: httpd 
+        state: stopped 
+    - name: Wait for 5 minutes 
+      pause: 
+        minutes: 5 
+    - name: Start the HTTPd service 
+      service: 
+        name: httpd 
+        state: stopped 

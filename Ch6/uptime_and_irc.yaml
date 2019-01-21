@@ -1,0 +1,12 @@
+- hosts: localhost 
+  tasks: 
+    - name: Read the machine uptime 
+      command: 'uptime -p' 
+      register: uptime 
+    - name: Send the uptime to IRC channel 
+      irc: 
+        port: 6669 
+        server: irc.example.net 
+        channel: #desired_channel 
+        msg: 'Local system uptime is {{ uptime.stdout }}.' 
+        color: green 
