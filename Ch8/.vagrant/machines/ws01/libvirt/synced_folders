@@ -1,1 +1,0 @@
-{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/fale/Learning-Ansible-2.X-Third-Edition/Ch8","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
