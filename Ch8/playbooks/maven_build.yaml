@@ -1,0 +1,12 @@
+- hosts: all
+  tasks: 
+    - name: Ensure the tag variable is properly set
+      fail: 'The version needs to be defined. To do so, please add: --extra-vars "version=$[TAG/BRANCH]"' 
+      when: version is not defined 
+    - name: Get last Project version 
+      git: 
+        repo: https://github.com/org/project.git 
+        dest: "/tmp" 
+        version: '{{ version }}' 
+    - name: Maven clean install 
+      shell: "cd /tmp/project && mvn clean install" 

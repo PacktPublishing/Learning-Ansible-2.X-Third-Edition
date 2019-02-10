@@ -1,0 +1,3 @@
+- hosts: ws01
+  roles: 
+    - java 

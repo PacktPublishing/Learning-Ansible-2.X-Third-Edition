@@ -1,0 +1,18 @@
+- hosts: all
+  tasks: 
+    - name: Install Apache 
+      yum: 
+        name: httpd 
+        state: present 
+      become: True
+    - name: Enable Apache 
+      service: 
+        name: httpd 
+        state: started 
+        enabled: True 
+      become: True
+    - name: Ensure Apache userdirs are properly configured
+      template:
+        src: ../templates/userdir.conf
+        dest: /etc/httpd/conf.d/userdir.conf
+      become: True
