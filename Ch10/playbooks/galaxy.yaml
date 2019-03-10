@@ -1,0 +1,5 @@
+- hosts: web 
+  user: vagrant
+  become: True 
+  roles: 
+    - geerlingguy.apache 

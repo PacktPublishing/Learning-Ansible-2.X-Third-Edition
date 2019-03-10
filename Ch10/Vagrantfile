@@ -1,0 +1,6 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "ws01.fale.io" do |ws01|
+    ws01.vm.hostname = "ws01.fale.io"
+    ws01.vm.box = "centos/7"
+  end
+end
