@@ -1,0 +1,24 @@
+- hosts: web 
+  user: vagrant 
+  tasks: 
+    - name: Print environment name 
+      debug: 
+        var: env 
+    - name: Print db server url 
+      debug: 
+        var: db_url 
+    - name: Print domain url 
+      debug: 
+        var: domain 
+- hosts: db 
+  user: vagrant 
+  tasks: 
+    - name: Print environment name 
+      debug: 
+        var: env 
+    - name: Print database username 
+      debug: 
+        var: db_user 
+    - name: Print database password 
+      debug: 
+        var: db_pass 

@@ -1,0 +1,5 @@
+- name: Restart HTTPd 
+  service: 
+    name: httpd 
+    state: restarted 
+  become: True 

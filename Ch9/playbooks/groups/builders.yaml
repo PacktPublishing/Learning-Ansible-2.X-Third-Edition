@@ -1,0 +1,5 @@
+- hosts: builders 
+  user: vagrant
+  roles: 
+    - common 
+    - builder 

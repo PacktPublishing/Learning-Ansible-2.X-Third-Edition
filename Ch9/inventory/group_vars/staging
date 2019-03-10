@@ -1,0 +1,4 @@
+env: staging 
+domain: staging.fale.io 
+db_url: db.staging.fale.io 
+db_pass: this_is_an_unsafe_password 

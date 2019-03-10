@@ -1,0 +1,13 @@
+- hosts: web 
+  user: vagrant 
+  tasks:
+    - name: Ensure git is installed
+      yum:
+        name: git
+        state: present 
+      become: True
+    - name: Install or update website 
+      git: 
+        repo: https://github.com/Fale/demo-php-app.git 
+        dest: /var/www/application 
+      become: True 
