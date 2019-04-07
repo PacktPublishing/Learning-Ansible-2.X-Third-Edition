@@ -1,4 +1,6 @@
+---
 - hosts: localhost 
+  connection: local
   tasks: 
     - name: Read the machine uptime 
       command: 'uptime -p' 

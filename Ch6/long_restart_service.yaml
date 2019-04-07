@@ -1,3 +1,4 @@
+---
 - hosts: ws01.fale.io 
   tasks: 
     - name: Stop the HTTPd service 

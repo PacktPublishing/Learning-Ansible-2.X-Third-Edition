@@ -1,6 +1,7 @@
+---
 - hosts: ws01.fale.io 
   tasks: 
-    - name: Silence Nagios 
+    - name: Mute Nagios 
       nagios: 
         action: disable_alerts 
         service: httpd 
@@ -17,7 +18,7 @@
       service: 
         name: httpd 
         state: stopped 
-    - name: Desilence Nagios 
+    - name: Unmute Nagios 
       nagios: 
         action: enable_alerts 
         service: httpd 
