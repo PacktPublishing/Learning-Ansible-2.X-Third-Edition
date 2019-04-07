@@ -32,7 +32,7 @@ def main():
 
     # Error handling and JSON return
     if success:
-        module.exit_json(msg=ret_msg, uid=uid, gid=gid)
+        module.exit_json(msg=ret_msg)
     else:
         module.fail_json(msg=ret_msg)
 

@@ -8,7 +8,7 @@ dest = ''
 ret_msg = ''
 SUCCESS = ''
 
-def print_message(state, mdg, key='Failed')
+def print_message(state, msg, key='failed')
     message = {
         key => state,
         "msg" => msg
@@ -22,17 +22,17 @@ args_file = ARGV[0]
 data = File.read(args_file)
 arguments = data.split(" ")
 arguments.each do |argument|
-    print_message(false, "Argument should be name-value pairs. Example name=foo") if not argument.include("=")
-    field.value = argument.split("=")
+    print_message(false, "Argument should be name-value pairs. Example name=foo") if not argument.include?("=")
+    field, value = argument.split("=")
     if field == "src"
         src = value
-    elseif field == "dest"
+    elsif field == "dest"
         dest = value
     else print_message(false, "Invalid argument provided. Valid arguments are src and dest.")
     end
 end
 
-result - Rsync.run("#{src}", "#{dest}")
+result = Rsync.run("#{src}", "#{dest}")
 if result.success?
     success = true
     ret_msg = "Copied file successfully"
