@@ -1,0 +1,43 @@
+PLAY [all] ***************************************************
+
+TASK [Gathering Facts] ***************************************
+ok: [test01.fale.io]
+
+TASK [Ensure EPEL is enabled] ********************************
+changed: [test01.fale.io]
+
+TASK [Ensure libselinux-python is present] *******************
+ok: [test01.fale.io]
+
+TASK [Ensure libsemanage-python is present] ******************
+changed: [test01.fale.io]
+
+TASK [Ensure we have last version of every package] **********
+changed: [test01.fale.io]
+
+TASK [Ensure NTP is installed] *******************************
+changed: [test01.fale.io]
+
+TASK [Ensure the timezone is set to UTC] *********************
+changed: [test01.fale.io]
+
+TASK [Ensure the NTP service is running and enabled] *********
+changed: [test01.fale.io]
+
+TASK [Ensure FirewallD is installed] *************************
+ok: [test01.fale.io]
+
+TASK [Ensure FirewallD is running] ***************************
+changed: [test01.fale.io]
+
+TASK [Ensure SSH can pass the firewall] **********************
+ok: [test01.fale.io]
+
+TASK [Ensure the MOTD file is present and updated] ***********
+changed: [test01.fale.io]
+
+TASK [Ensure the hostname is the same of the inventory] ******
+ok: [test01.fale.io]
+
+PLAY RECAP ***************************************************
+test01.fale.io       : ok=13 changed=8 unreachable=0 failed=0 

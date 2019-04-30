@@ -1,0 +1,29 @@
+PLAY [webserver] *********************************************
+
+TASK [Gathering Facts] ***************************************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [Ensure the HTTPd package is installed] *****************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [Ensure the HTTPd service is enabled and running] *******
+changed: [ws02.fale.io]
+changed: [ws01.fale.io]
+
+TASK [Ensure HTTP can pass the firewall] *********************
+changed: [ws01.fale.io]
+changed: [ws02.fale.io]
+
+TASK [Ensure HTTPd configuration is updated] *****************
+changed: [ws01.fale.io]
+changed: [ws02.fale.io]
+
+RUNNING HANDLER [Restart HTTPd] ******************************
+changed: [ws01.fale.io]
+changed: [ws02.fale.io]
+
+PLAY RECAP ***************************************************
+ws01.fale.io          : ok=6 changed=4 unreachable=0 failed=0 
+ws02.fale.io          : ok=6 changed=4 unreachable=0 failed=0 

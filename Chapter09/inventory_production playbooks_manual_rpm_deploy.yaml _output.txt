@@ -1,0 +1,46 @@
+PLAY [builders] ******************************************************
+
+TASK [setup] *********************************************************
+ok: [builder01.fale.io]
+
+TASK [Copy SPEC file to user folder] *********************************
+changed: [builder01.fale.io]
+
+TASK [Ensure rpmbuild exists] ****************************************
+changed: [builder01.fale.io]
+
+TASK [Ensure rpmbuild/SOURCES exists] ********************************
+changed: [builder01.fale.io]
+
+TASK [Download the sources] ******************************************
+changed: [builder01.fale.io]
+
+TASK [Ensure no SRPM files are present] ******************************
+changed: [builder01.fale.io]
+
+TASK [Build the SRPM file] *******************************************
+changed: [builder01.fale.io]
+
+TASK [Execute mock] **************************************************
+changed: [builder01.fale.io]
+
+TASK [Copy the arch binaries in the repo path] ***********************
+changed: [builder01.fale.io]
+
+TASK [Recreate the repo metadata] ************************************
+changed: [builder01.fale.io]
+
+PLAY [web] ***********************************************************
+
+TASK [setup] *********************************************************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [Update all packages] *******************************************
+changed: [ws01.fale.io]
+changed: [ws02.fale.io]
+
+PLAY RECAP ***********************************************************
+builder01.fale.io            : ok=10 changed=9 unreachable=0 failed=0
+ws01.fale.io                 : ok=2  changed=1 unreachable=0 failed=0
+ws02.fale.io                 : ok=2  changed=1 unreachable=0 failed=0 

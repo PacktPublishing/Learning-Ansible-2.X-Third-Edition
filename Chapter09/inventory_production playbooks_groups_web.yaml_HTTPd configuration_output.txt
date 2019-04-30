@@ -1,0 +1,81 @@
+PLAY [web] ***********************************************************
+
+TASK [Gathering Facts] ***********************************************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure EPEL is enabled] *******************************
+ok: [ws02.fale.io]
+ok: [ws01.fale.io]
+
+TASK [common : Ensure libselinux-python is present] ******************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure libsemanage-python is present] *****************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure we have last version of every package] *********
+ok: [ws02.fale.io]
+ok: [ws01.fale.io]
+
+TASK [common : Ensure NTP is installed] ******************************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure the timezone is set to UTC] ********************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure the NTP service is running and enabled] ********
+ok: [ws02.fale.io]
+ok: [ws01.fale.io]
+
+TASK [common : Ensure FirewallD is installed] ************************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure FirewallD is running] **************************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure SSH can pass the firewall] *********************
+ok: [ws02.fale.io]
+ok: [ws01.fale.io]
+
+TASK [common : Ensure the MOTD file is present and updated] **********
+changed: [ws02.fale.io]
+changed: [ws01.fale.io]
+
+TASK [common : Ensure the hostname is the same of the inventory] *****
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [webserver : Ensure the HTTPd package is installed] *************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [webserver : Ensure the HTTPd service is enabled and running] ***
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [webserver : Ensure HTTP can pass the firewall] *****************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [webserver : Ensure HTTPd configuration is updated] *************
+changed: [ws01.fale.io]
+changed: [ws02.fale.io]
+
+TASK [webserver : Ensure the website is present and updated] *********
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+RUNNING HANDLER [webserver : Restart HTTPd] **************************
+changed: [ws01.fale.io]
+changed: [ws02.fale.io]
+
+PLAY RECAP ***********************************************************
+ws01.fale.io                 : ok=19 changed=3 unreachable=0 failed=0 
+ws02.fale.io                 : ok=19 changed=3 unreachable=0 failed=0 

@@ -1,0 +1,99 @@
+PLAY [database] **********************************************
+
+TASK [Gathering Facts] ***************************************
+ok: [db01.fale.io]
+
+TASK [common : Ensure EPEL is enabled] ***********************
+ok: [db01.fale.io]
+
+TASK [common : Ensure libselinux-python is present] **********
+ok: [db01.fale.io]
+
+TASK [common : Ensure libsemanage-python is present] *********
+ok: [db01.fale.io]
+
+TASK [common : Ensure we have last version of every package] *
+ok: [db01.fale.io]
+
+TASK [common : Ensure NTP is installed] **********************
+ok: [db01.fale.io]
+
+TASK [common : Ensure the timezone is set to UTC] ************
+ok: [db01.fale.io]
+
+TASK [common : Ensure the NTP service is running and enabled]
+ok: [db01.fale.io]
+
+TASK [common : Ensure FirewallD is installed] ****************
+ok: [db01.fale.io]
+
+TASK [common : Ensure FirewallD is running] ******************
+ok: [db01.fale.io]
+
+TASK [common : Ensure SSH can pass the firewall] *************
+ok: [db01.fale.io]
+
+TASK [common : Ensure the MOTD file is present and updated] **
+ok: [db01.fale.io]
+
+TASK [common : Ensure the hostname is the same of the inventory]
+ok: [db01.fale.io]
+
+PLAY [webserver] *********************************************
+
+TASK [Gathering Facts] ***************************************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure EPEL is enabled] ***********************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure libselinux-python is present] **********
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure libsemanage-python is present] *********
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure we have last version of every package] *
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure NTP is installed] **********************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure the timezone is set to UTC] ************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure the NTP service is running and enabled]
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure FirewallD is installed] ****************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure FirewallD is running] ******************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure SSH can pass the firewall] *************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure the MOTD file is present and updated] **
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+TASK [common : Ensure the hostname is the same of the inventory]
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+
+PLAY RECAP ***************************************************
+db01.fale.io         : ok=13 changed=0 unreachable=0 failed=0 
+ws01.fale.io         : ok=13 changed=0 unreachable=0 failed=0 
+ws02.fale.io         : ok=13 changed=0 unreachable=0 failed=0

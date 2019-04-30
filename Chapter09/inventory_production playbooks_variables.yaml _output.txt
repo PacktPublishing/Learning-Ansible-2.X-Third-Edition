@@ -1,0 +1,54 @@
+PLAY [web] ***********************************************************
+
+TASK [Gathering Facts] ***********************************************
+ok: [ws02.fale.io]
+ok: [ws01.fale.io]
+
+TASK [Print environment name] ****************************************
+ok: [ws01.fale.io] => {
+    "env": "production"
+}
+ok: [ws02.fale.io] => {
+    "env": "production"
+}
+
+TASK [Print db server url] *******************************************
+ok: [ws01.fale.io] => {
+    "db_url": "db.fale.io"
+}
+ok: [ws02.fale.io] => {
+    "db_url": "db.fale.io"
+}
+
+TASK [Print domain url] **********************************************
+ok: [ws01.fale.io] => {
+    "domain": "fale.io"
+}
+ok: [ws02.fale.io] => {
+    "domain": "fale.io"
+}
+
+PLAY [db] ************************************************************
+
+TASK [Gathering Facts] ***********************************************
+ok: [db01.fale.io]
+
+TASK [Print environment name] ****************************************
+ok: [db01.fale.io] => {
+    "env": "production"
+}
+
+TASK [Print database username] ***************************************
+ok: [db01.fale.io] => {
+    "db_user": "mysqluser"
+}
+
+TASK [Print database password] ***************************************
+ok: [db01.fale.io] => {
+    "db_pass": "this_is_a_safe_password"
+}
+
+PLAY RECAP ***********************************************************
+db01.fale.io                  : ok=4 changed=0 unreachable=0 failed=0 
+ws01.fale.io                  : ok=4 changed=0 unreachable=0 failed=0 
+ws02.fale.io                  : ok=4 changed=0 unreachable=0 failed=0 

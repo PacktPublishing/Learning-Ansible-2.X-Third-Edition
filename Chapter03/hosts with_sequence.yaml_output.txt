@@ -1,0 +1,43 @@
+PLAY [all] *****************************************************
+
+TASK [Gathering Facts] *****************************************
+ok: [ws02.fale.io]
+ok: [ws01.fale.io]
+ok: [db01.fale.io]
+
+TASK [Create the folders /tmp/dirXY with XY from 1 to 10] ******
+changed: [ws01.fale.io] => (item=1)
+changed: [db01.fale.io] => (item=1)
+changed: [ws02.fale.io] => (item=1)
+changed: [ws01.fale.io] => (item=2)
+changed: [db01.fale.io] => (item=2)
+changed: [ws02.fale.io] => (item=2)
+changed: [ws01.fale.io] => (item=3)
+changed: [db01.fale.io] => (item=3)
+changed: [ws02.fale.io] => (item=3)
+changed: [ws01.fale.io] => (item=4)
+changed: [db01.fale.io] => (item=4)
+changed: [ws02.fale.io] => (item=4)
+changed: [ws01.fale.io] => (item=5)
+changed: [ws02.fale.io] => (item=5)
+changed: [db01.fale.io] => (item=5)
+changed: [ws01.fale.io] => (item=6)
+changed: [ws02.fale.io] => (item=6)
+changed: [db01.fale.io] => (item=6)
+changed: [ws01.fale.io] => (item=7)
+changed: [ws02.fale.io] => (item=7)
+changed: [db01.fale.io] => (item=7)
+changed: [ws02.fale.io] => (item=8)
+changed: [ws01.fale.io] => (item=8)
+changed: [db01.fale.io] => (item=8)
+changed: [ws02.fale.io] => (item=9)
+changed: [ws01.fale.io] => (item=9)
+changed: [db01.fale.io] => (item=9)
+changed: [ws01.fale.io] => (item=10)
+changed: [ws02.fale.io] => (item=10)
+changed: [db01.fale.io] => (item=10)
+
+PLAY RECAP *****************************************************
+db01.fale.io : ok=2 changed=1 unreachable=0 failed=0 
+ws01.fale.io : ok=2 changed=1 unreachable=0 failed=0 
+ws02.fale.io : ok=2 changed=1 unreachable=0 failed=0 PLAY [all] 

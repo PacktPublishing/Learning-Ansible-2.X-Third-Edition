@@ -1,0 +1,21 @@
+PLAY [localhost] *****************************************************
+
+TASK [Gathering Facts] ***********************************************
+ok: [localhost]
+
+TASK [Ensure domain is present] **************************************
+changed: [localhost]
+
+TASK [Add the SSH Key to Digital Ocean] ******************************
+changed: [localhost]
+
+TASK [Ensure the ws and db servers are present] **********************
+changed: [localhost] => (item=ws01.do.fale.io)
+changed: [localhost] => (item=ws02.do.fale.io)
+changed: [localhost] => (item=db01.do.fale.io)
+
+TASK [Ensure domain resolve properly] ********************************
+changed: [localhost] => (item={'_ansible_parsed': True, u'droplet': {u'status': u'active', u'kernel': None, u'features': [], u'tags': [], u'image': {u'status': u'available', u'min_disk_size': 20, u'description': u'7.5 x64', u'name': u'7.5 x64', u'tags': [], u'created_at': u'2018-05-19T08:31:48Z', u'error_message': u'', u'public': True, u'regions': [u'nyc1', u'sfo1', u'nyc2', u'ams2', u'sgp1', u'lon1', u'nyc3', u'ams3', u'fra1', u'tor1', u'sfo2', u'blr1'], u'id': 34487567, u'distribution': u'CentOS', u'type': u'snapshot', u'slug': u'centos-7-x64', u'size_gigabytes': 0.44}, u'disk': 20, u'ip_address': u'46.101.72.83', u'networks': {u'v4': [{u'ip_address': u'46.101.72.83', u'netmask': u'255.255.248.0', u'type': u'public', u'gateway': u'46.101.72.1'}], u'v6': []}, u'size': {u'price_monthly': 5.0, u'available': True, u'transfer': 1.0, u'price_hourly': 0.00744, u'regions': [u'ams2', u'ams3', u'blr1', u'fra1', u'lon1', u'nyc1', u'nyc2', u'nyc3', u'sfo1', u'sfo2', u'sgp1', u'tor1'], u'vcpus': 1, u'memory': 512, u'disk': 20, u'slug': u'512mb'}, u'volume_ids': [], u'locked': False, u'name': u'ws01.do.fale.io', u'backup_ids': [], u'region': {u'available': True, u'slug': u'lon1', u'features': [u'private_networking', u'backups', u'ipv6', u'metadata', u'install_agent', u'storage', u'image_transfer'], u'name': u'London 1', u'sizes': [u'512mb', u'1gb', u'2gb', u'4gb', u'8gb', u'16gb', u's-1vcpu-3gb', u'm-1vcpu-8gb', u's-1vcpu-1gb', u's-3vcpu-1gb', u's-1vcpu-2gb', u's-2vcpu-2gb', u's-2vcpu-4gb', u's-4vcpu-8gb', u's-6vcpu-16gb']}, u'snapshot_ids': [], u'size_slug': u'512mb', u'id': 128388559, u'next_backup_window': None, u'vcpus': 1, u'memory': 512, u'created_at': u'2019-01-13T17:15:01Z'}, '_ansible_item_result': True, '_ansible_item_label': u'ws01.do.fale.io', 'failed': False, u'changed': True, 'item': u'ws01.do.fale.io', u'invocation': {u'module_args': {u'unique_name': True, u'virtio': True, u'region_id': u'lon1', u'backups_enabled': False, u'user_data': None, u'image_id': u'centos-7-x64', u'wait_timeout': 300, u'api_token': u'VALUE_SPECIFIED_IN_NO_LOG_PARAMETER', u'id': None, u'wait': True, u'name': u'ws01.do.fale.io', u'size_id': u'512mb', u'ssh_pub_key': None, u'state': u'present', u'command': u'droplet', u'ssh_key_ids': [u'23880452'], u'ipv6': False, u'private_networking': False}}, '_ansible_ignore_errors': None, '_ansible_no_log': False})
+
+PLAY RECAP ***********************************************************
+localhost : ok=5 changed=4 unreachable=0 failed=0

@@ -1,0 +1,33 @@
+PLAY [all] *****************************************************
+
+TASK [Gathering Facts] *****************************************
+ok: [db01.fale.io]
+ok: [ws02.fale.io]
+ok: [ws01.fale.io]
+
+TASK [Ensure the folder /tmp/iproute2 is present] **************
+changed: [ws02.fale.io]
+changed: [ws01.fale.io]
+changed: [db01.fale.io]
+
+TASK [Copy files that start with rt to the tmp folder] *********
+changed: [ws01.fale.io] => (item=/etc/iproute2/rt_realms)
+changed: [db01.fale.io] => (item=/etc/iproute2/rt_realms)
+changed: [ws02.fale.io] => (item=/etc/iproute2/rt_realms)
+changed: [ws01.fale.io] => (item=/etc/iproute2/rt_protos)
+changed: [ws02.fale.io] => (item=/etc/iproute2/rt_protos)
+changed: [db01.fale.io] => (item=/etc/iproute2/rt_protos)
+changed: [ws01.fale.io] => (item=/etc/iproute2/rt_scopes)
+changed: [ws02.fale.io] => (item=/etc/iproute2/rt_scopes)
+changed: [db01.fale.io] => (item=/etc/iproute2/rt_scopes)
+changed: [ws02.fale.io] => (item=/etc/iproute2/rt_tables)
+changed: [ws01.fale.io] => (item=/etc/iproute2/rt_tables)
+changed: [db01.fale.io] => (item=/etc/iproute2/rt_tables)
+changed: [ws02.fale.io] => (item=/etc/iproute2/rt_dsfield)
+changed: [ws01.fale.io] => (item=/etc/iproute2/rt_dsfield)
+changed: [db01.fale.io] => (item=/etc/iproute2/rt_dsfield)
+
+PLAY RECAP *****************************************************
+db01.fale.io            : ok=3 changed=2 unreachable=0 failed=0 
+ws01.fale.io            : ok=3 changed=2 unreachable=0 failed=0 
+ws02.fale.io            : ok=3 changed=2 unreachable=0 failed=0 

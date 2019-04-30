@@ -1,0 +1,64 @@
+PLAY [builders] ******************************************************
+
+TASK [Gathering Facts] ***********************************************
+ok: [builder01.fale.io]
+
+TASK [common : Ensure EPEL is enabled] *******************************
+changed: [builder01.fale.io]
+
+TASK [common : Ensure libselinux-python is present] ******************
+ok: [builder01.fale.io]
+
+TASK [common : Ensure libsemanage-python is present] *****************
+changed: [builder01.fale.io]
+
+TASK [common : Ensure we have last version of every package] *********
+changed: [builder01.fale.io]
+
+TASK [common : Ensure NTP is installed] ******************************
+changed: [builder01.fale.io]
+
+TASK [common : Ensure the timezone is set to UTC] ********************
+changed: [builder01.fale.io]
+
+TASK [common : Ensure the NTP service is running and enabled] ********
+changed: [builder01.fale.io]
+
+TASK [common : Ensure FirewallD is installed] ************************
+ok: [builder01.fale.io]
+
+TASK [common : Ensure FirewallD is running] **************************
+changed: [builder01.fale.io]
+
+TASK [common : Ensure SSH can pass the firewall] *********************
+ok: [builder01.fale.io]
+
+TASK [common : Ensure the MOTD file is present and updated] **********
+changed: [builder01.fale.io]
+
+TASK [common : Ensure the hostname is the same of the inventory] *****
+ok: [builder01.fale.io]
+
+TASK [builder : Ensure needed packages are present] ******************
+changed: [builder01.fale.io] => (item=[u'mock', u'rpm-build', u'spectool', u'createrepo', u'httpd'])
+
+TASK [builder : Ensure the user ansible is in the mock group] ********
+changed: [builder01.fale.io]
+
+TASK [builder : Ensure the /var/www/repo folder is present] **********
+changed: [builder01.fale.io]
+
+TASK [builder : Ensure the HTTPd zone for the repo is present] *******
+changed: [builder01.fale.io]
+
+TASK [builder : Ensure the HTTPd service is enabled and running] *****
+changed: [builder01.fale.io]
+
+TASK [builder : Ensure HTTP can pass the firewall] *******************
+changed: [builder01.fale.io]
+
+RUNNING HANDLER [builder : Restart HTTPd] ****************************
+changed: [builder01.fale.io]
+
+PLAY RECAP ***********************************************************
+builder01.fale.io           : ok=20 changed=15 unreachable=0 failed=0

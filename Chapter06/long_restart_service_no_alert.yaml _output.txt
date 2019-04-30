@@ -1,0 +1,23 @@
+   PLAY [ws01.fale.io] **********************************************
+    
+    TASK [setup] *****************************************************
+    ok: [ws01.fale.io]
+    
+    TASK [Mute Nagios] ***********************************************
+    changed: [nagios.fale.io]
+    
+    TASK [Stop the HTTpd service] ************************************
+    changed: [ws01.fale.io]
+    
+    TASK [Wait for 5 minutes] ****************************************
+    changed: [ws01.fale.io]
+    
+    TASK [Start the HTTpd service] ***********************************
+    changed: [ws01.fale.io]
+    
+    TASK [Unmute Nagios] *********************************************
+    changed: [nagios.fale.io]
+    
+    PLAY RECAP *******************************************************
+    ws01.fale.io      : ok=4    changed=3    unreachable=0    failed=0
+    nagios.fale.io    : ok=2    changed=2    unreachable=0    failed=0

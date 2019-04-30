@@ -1,0 +1,39 @@
+ansible 2.7.2
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/fale/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible
+  python version = 2.7.15 (default, Oct 15 2018, 15:24:06) [GCC 8.1.1 20180712 (Red Hat 8.1.1-5)]
+Using /etc/ansible/ansible.cfg as config file
+Parsed test01.fale.io, inventory source with host_list plugin
+META: ran handlers
+<test01.fale.io> ESTABLISH SSH CONNECTION FOR USER: None
+<test01.fale.io> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/home/fale/.ansible/cp/3129765f43 test01.fale.io '/bin/sh -c '"'"'echo ~ && sleep 0'"'"''
+<test01.fale.io> (0, '/home/vagrant\n', '')
+<test01.fale.io> ESTABLISH SSH CONNECTION FOR USER: None
+<test01.fale.io> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/home/fale/.ansible/cp/3129765f43 test01.fale.io '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/vagrant/.ansible/tmp/ansible-tmp-1543958186.4-246623690201377 `" && echo ansible-tmp-1543958186.4-246623690201377="` echo /home/vagrant/.ansible/tmp/ansible-tmp-1543958186.4-246623690201377 `" ) && sleep 0'"'"''
+<test01.fale.io> (0, 'ansible-tmp-1543958186.4-246623690201377=/home/vagrant/.ansible/tmp/ansible-tmp-1543958186.4-246623690201377\n', '')
+Using module file /usr/lib/python2.7/site-packages/ansible/modules/system/ping.py
+<test01.fale.io> PUT /home/fale/.ansible/tmp/ansible-local-5021pGJo3S/tmpgbTtgx TO /home/vagrant/.ansible/tmp/ansible-tmp-1543958186.4-246623690201377/AnsiballZ_ping.py
+<test01.fale.io> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/home/fale/.ansible/cp/3129765f43 '[test01.fale.io]'
+<test01.fale.io> (0, 'sftp> put /home/fale/.ansible/tmp/ansible-local-5021pGJo3S/tmpgbTtgx /home/vagrant/.ansible/tmp/ansible-tmp-1543958186.4-246623690201377/AnsiballZ_ping.py\n', '')
+<test01.fale.io> ESTABLISH SSH CONNECTION FOR USER: None
+<test01.fale.io> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/home/fale/.ansible/cp/3129765f43 test01.fale.io '/bin/sh -c '"'"'chmod u+x /home/vagrant/.ansible/tmp/ansible-tmp-1543958186.4-246623690201377/ /home/vagrant/.ansible/tmp/ansible-tmp-1543958186.4-246623690201377/AnsiballZ_ping.py && sleep 0'"'"''
+<test01.fale.io> (0, '', '')
+<test01.fale.io> ESTABLISH SSH CONNECTION FOR USER: None
+<test01.fale.io> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/home/fale/.ansible/cp/3129765f43 -tt test01.fale.io '/bin/sh -c '"'"'/usr/bin/python /home/vagrant/.ansible/tmp/ansible-tmp-1543958186.4-246623690201377/AnsiballZ_ping.py && sleep 0'"'"''
+<test01.fale.io> (0, '\r\n{"invocation": {"module_args": {"data": "pong"}}, "ping": "pong"}\r\n', 'Shared connection to 192.168.121.190 closed.\r\n')
+<test01.fale.io> ESTABLISH SSH CONNECTION FOR USER: None
+<test01.fale.io> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=10 -o ControlPath=/home/fale/.ansible/cp/3129765f43 test01.fale.io '/bin/sh -c '"'"'rm -f -r /home/vagrant/.ansible/tmp/ansible-tmp-1543958186.4-246623690201377/ > /dev/null 2>&1 && sleep 0'"'"''
+<test01.fale.io> (0, '', '')
+test01.fale.io | SUCCESS => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "data": "pong"
+        }
+    }, 
+    "ping": "pong"
+}
+META: ran handlers
+META: ran handlers

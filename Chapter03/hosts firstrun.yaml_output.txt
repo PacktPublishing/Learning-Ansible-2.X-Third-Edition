@@ -1,0 +1,26 @@
+PLAY [all] ***********************************************************
+
+TASK [Gathering Facts] ***********************************************
+ok: [ws01.fale.io]
+ok: [ws02.fale.io]
+ok: [db01.fale.io]
+
+TASK [Ensure ansible user exists] ************************************
+changed: [ws02.fale.io]
+changed: [db01.fale.io]
+changed: [ws01.fale.io]
+
+TASK [Ensure ansible user accepts the SSH key] ***********************
+changed: [ws02.fale.io]
+changed: [ws01.fale.io]
+changed: [db01.fale.io]
+
+TASK [Ensure the ansible user is sudoer with no password required] ***
+changed: [db01.fale.io]
+changed: [ws01.fale.io]
+changed: [ws02.fale.io]
+
+PLAY RECAP ***********************************************************
+db01.fale.io                  : ok=4 changed=3 unreachable=0 failed=0 
+ws01.fale.io                  : ok=4 changed=3 unreachable=0 failed=0 
+ws02.fale.io                  : ok=4 changed=3 unreachable=0 failed=0 

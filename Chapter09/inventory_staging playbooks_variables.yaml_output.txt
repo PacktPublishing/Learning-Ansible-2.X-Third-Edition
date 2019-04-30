@@ -1,0 +1,54 @@
+PLAY [web] ***********************************************************
+
+TASK [Gathering Facts] ***********************************************
+ok: [ws01.staging.fale.io]
+ok: [ws02.staging.fale.io]
+
+TASK [Print environment name] ****************************************
+ok: [ws01.staging.fale.io] => {
+    "env": "staging"
+}
+ok: [ws02.staging.fale.io] => {
+    "env": "staging"
+}
+
+TASK [Print db server url] *******************************************
+ok: [ws01.staging.fale.io] => {
+    "db_url": "db.staging.fale.io"
+}
+ok: [ws02.staging.fale.io] => {
+    "db_url": "db.staging.fale.io"
+}
+
+TASK [Print domain url] **********************************************
+ok: [ws01.staging.fale.io] => {
+    "domain": "staging.fale.io"
+}
+ok: [ws02.staging.fale.io] => {
+    "domain": "staging.fale.io"
+}
+
+PLAY [db] ************************************************************
+
+TASK [Gathering Facts] ***********************************************
+ok: [db01.staging.fale.io]
+
+TASK [Print environment name] ****************************************
+ok: [db01.staging.fale.io] => {
+    "env": "staging"
+}
+
+TASK [Print database username] ***************************************
+ok: [db01.staging.fale.io] => {
+    "db_user": "mysqluser"
+}
+
+TASK [Print database password] ***************************************
+ok: [db01.staging.fale.io] => {
+    "db_pass": "this_is_an_unsafe_password"
+}
+
+PLAY RECAP ***********************************************************
+db01.staging.fale.io          : ok=4 changed=0 unreachable=0 failed=0 
+ws01.staging.fale.io          : ok=4 changed=0 unreachable=0 failed=0 
+ws02.staging.fale.io          : ok=4 changed=0 unreachable=0 failed=0 

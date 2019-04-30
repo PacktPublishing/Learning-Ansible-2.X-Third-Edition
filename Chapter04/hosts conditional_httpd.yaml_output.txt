@@ -1,0 +1,32 @@
+PLAY [webserver] ***********************************************
+
+TASK [Gathering Facts] *****************************************
+ok: [ws03.fale.io]
+ok: [ws02.fale.io]
+ok: [ws01.fale.io]
+
+TASK [Print the ansible_os_family value] ***********************
+ok: [ws01.fale.io] => {
+ "msg": "RedHat"
+}
+ok: [ws02.fale.io] => {
+ "msg": "RedHat"
+}
+ok: [ws03.fale.io] => {
+ "msg": "Debian"
+}
+
+TASK [Ensure the httpd package is updated] *******************
+skipping: [ws03.fale.io]
+changed: [ws02.fale.io]
+changed: [ws01.fale.io]
+
+TASK [Ensure the apache2 package is updated] *******************
+skipping: [ws01.fale.io]
+skipping: [ws02.fale.io]
+changed: [ws03.fale.io]
+
+PLAY RECAP *****************************************************
+ws01.fale.io            : ok=3 changed=1 unreachable=0 failed=0 
+ws02.fale.io            : ok=3 changed=1 unreachable=0 failed=0 
+ws03.fale.io            : ok=3 changed=1 unreachable=0 failed=0

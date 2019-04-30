@@ -1,0 +1,33 @@
+PLAY [all] *******************************************************
+
+TASK [Gathering Facts] *******************************************
+ok: [db01.fale.io]
+ok: [ws02.fale.io]
+ok: [ws01.fale.io]
+
+TASK [Ensure the users exist] ************************************
+changed: [db01.fale.io] => (item=alice)
+changed: [ws02.fale.io] => (item=alice)
+changed: [ws01.fale.io] => (item=alice)
+changed: [db01.fale.io] => (item=bob)
+changed: [ws02.fale.io] => (item=bob)
+changed: [ws01.fale.io] => (item=bob)
+
+TASK [Ensure the folders exist] **********************************
+changed: [ws01.fale.io] => (item=[u'alice', u'mail'])
+changed: [db01.fale.io] => (item=[u'alice', u'mail'])
+changed: [ws02.fale.io] => (item=[u'alice', u'mail'])
+changed: [ws01.fale.io] => (item=[u'alice', u'public_html'])
+changed: [ws02.fale.io] => (item=[u'alice', u'public_html'])
+changed: [db01.fale.io] => (item=[u'alice', u'public_html'])
+changed: [ws01.fale.io] => (item=[u'bob', u'mail'])
+changed: [db01.fale.io] => (item=[u'bob', u'mail'])
+changed: [ws02.fale.io] => (item=[u'bob', u'mail'])
+changed: [ws01.fale.io] => (item=[u'bob', u'public_html'])
+changed: [db01.fale.io] => (item=[u'bob', u'public_html'])
+changed: [ws02.fale.io] => (item=[u'bob', u'public_html'])
+
+PLAY RECAP *******************************************************
+db01.fale.io              : ok=3 changed=2 unreachable=0 failed=0 
+ws01.fale.io              : ok=3 changed=2 unreachable=0 failed=0 
+ws02.fale.io              : ok=3 changed=2 unreachable=0 failed=0
