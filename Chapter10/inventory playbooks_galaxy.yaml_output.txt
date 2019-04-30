@@ -1,0 +1,51 @@
+PLAY [web] ***********************************************************
+
+TASK [Gathering Facts] ***********************************************
+ok: [ws01.fale.io]
+
+TASK [geerlingguy.apache : Include OS-specific variables.] ***********
+ok: [ws01.fale.io]
+
+TASK [geerlingguy.apache : Include variables for Amazon Linux.] ******
+skipping: [ws01.fale.io]
+
+TASK [geerlingguy.apache : Define apache_packages.] ******************
+ok: [ws01.fale.io]
+
+TASK [geerlingguy.apache : include_tasks] ****************************
+included: /home/fale/.ansible/roles/geerlingguy.apache/tasks/setup-RedHat.yml for ws01.fale.io
+
+TASK [geerlingguy.apache : Ensure Apache is installed on RHEL.] ******
+changed: [ws01.fale.io]
+
+TASK [geerlingguy.apache : Get installed version of Apache.] *********
+ok: [ws01.fale.io]
+
+TASK [geerlingguy.apache : Create apache_version variable.] **********
+ok: [ws01.fale.io]
+
+TASK [geerlingguy.apache : Include Apache 2.2 variables.] ************
+skipping: [ws01.fale.io]
+
+TASK [geerlingguy.apache : Include Apache 2.4 variables.] ************
+ok: [ws01.fale.io]
+
+TASK [geerlingguy.apache : Configure Apache.] ************************
+included: /home/fale/.ansible/roles/geerlingguy.apache/tasks/configure-RedHat.yml for ws01.fale.io
+
+TASK [geerlingguy.apache : Configure Apache.] ************************
+ok: [ws01.fale.io] => (item={u'regexp': u'^Listen ', u'line': u'Listen 80'})
+
+TASK [geerlingguy.apache : Check whether certificates defined in vhosts exist.] *
+
+TASK [geerlingguy.apache : Add apache vhosts configuration.] *********
+changed: [ws01.fale.io]
+
+TASK [geerlingguy.apache : Ensure Apache has selected state and enabled on boot.] *
+changed: [ws01.fale.io]
+
+RUNNING HANDLER [geerlingguy.apache : restart apache] ****************
+changed: [ws01.fale.io]
+
+PLAY RECAP ***********************************************************
+ws01.fale.io                 : ok=13 changed=4 unreachable=0 failed=0
